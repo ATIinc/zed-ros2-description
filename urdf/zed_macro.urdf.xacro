@@ -17,7 +17,7 @@
 -->
 
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include filename="$(find zed_description)/urdf/include/materials.urdf.xacro" />
+  <xacro:include filename="package://zed_description/urdf/include/materials.urdf.xacro" />
   <xacro:property name="M_PI"     value="3.1415926535897931" />
 
   <!--
@@ -39,7 +39,7 @@
     <xacro:if value="${model == 'zedm'}">
       <xacro:property name="baseline" value="0.063" />
       <xacro:property name="height" value="0.0265" />
-      <xacro:property name="bottom_slope" value="0.0" /> 
+      <xacro:property name="bottom_slope" value="0.0" />
       <xacro:property name="screw_offset_x" value="0.0" />
       <xacro:property name="screw_offset_z" value="0.0" />
       <xacro:property name="optical_offset_x" value="0.0" />
@@ -147,7 +147,7 @@
 
     <!-- Camera mounting point (the threaded screw hole in the bottom) -->
     <link name="${name}_camera_link" />
-    
+
     <!-- Camera Center -->
     <link name="${name}_camera_center">
       <xacro:unless value="${model == 'virtual'}">
@@ -264,7 +264,7 @@
           <child link="${name}_temp_right_link"/>
           <origin xyz="0 0 0" rpy="0 0 0" />
         </joint>
-      </xacro:if>      
+      </xacro:if>
     </xacro:unless>
 
     <xacro:if value="${mono}">
